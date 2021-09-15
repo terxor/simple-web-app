@@ -1,0 +1,22 @@
+<%- include("parts/header", {title: user.id + "'s profile"}) %>
+
+<h1><%= user.id %>'s profile</h1>
+<div>
+  <h3>Details</h3>
+  <table>
+    <tr>
+      <td>Username </td>
+      <td>
+        <%= user.id %>
+      </td>
+    </tr>
+    <tr>
+      <td>Name </td>
+      <td>
+        <%= user.name %>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<%- include("parts/footer") %>

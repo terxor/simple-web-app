@@ -1,0 +1,23 @@
+<%- include("parts/header", {title: "Home Page"}) %>
+
+<div>
+  <h1>This is the landing page</h1>
+</div>
+
+<div>
+  Login status:
+  <% if (user) { %>
+    <%= user.password %>
+    Logged in as
+    <a href="/profile"><%= user.id %></a>
+    <form method="GET" action="/logout"><button type="submit">Logout</button></form>
+  <% } else { %>
+    Not logged in.
+    You can
+    <a href="/login">login</a>
+    or
+    <a href="/signup">sign up</a>
+  <% } %>
+</div>
+
+<%- include("parts/footer") %>

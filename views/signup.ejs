@@ -1,0 +1,21 @@
+<%- include("parts/header", {title: "Signup"}) %>
+
+<form method='POST' action='/signup'>
+  <table>
+    <tr>
+      <td><label for='username'>Username</label></td>
+      <td><input type='text' name='username'></td>
+    </tr>
+    <tr>
+      <td><label for='username'>Password</label></td>
+      <td><input type='password' name='password'></td>
+    </tr>
+    <tr>
+      <td><label for='name'>Name</label></td>
+      <td><input type='text' name='name'></td>
+    </tr>
+  </table>
+  <button type='submit'>Sign Up</button>
+</form>
+
+<%- include("parts/footer") %>
