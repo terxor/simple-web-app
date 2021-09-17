@@ -58,4 +58,33 @@ db.addUser = async (user) => {
   }
 }
 
+db.addNote = async (note) => {
+  return db.query(`INSERT INTO notes (
+      user_id,
+      type,
+      content,
+      visibility
+    ) VALUES(
+      '${note.user_id}',
+      '${note.type}',
+      '${note.content}',
+      '${note.visibility}'
+  )`);
+}
+
+db.getNotes = async (filter) => {
+  var queryString = `SELECT * FROM notes`;
+  if (!filter) filter = {};
+  keys = Object.keys(filter);
+  if (keys.length > 0) {
+    queryString += ` WHERE`;
+    for (var i = 0; i < keys.length; i++) {
+      key = keys[i];
+      queryString += ` ${key} = '${filter[key]}'`;
+      if (i < keys.length - 1) queryString += ` AND`;
+    }
+  }
+  return db.query(queryString);
+}
+
 module.exports = db;

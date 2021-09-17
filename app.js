@@ -27,6 +27,7 @@ strategy(passport);
 
 app.use(require("./routes/index.js"));
 app.use(require("./routes/user.js"));
+app.use(require("./routes/notes.js"));
 
 app.use(middleware.logErrors);
 app.use(middleware.handleErrors);
